@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,24 +15,34 @@
 <body>
 
 <?php 
-include "db.php";
-$sql = "select * from  uplode";
-$res = mysqli_query($conn,$sql);
-
-if($res == true){
-   // $i= 1;
-while( $row = mysqli_fetch_assoc($res)  ) 
-{
-
-    //$i++;
+ include "db.php";
+ include "head.php";
+ //$ese = $_SESSION['username'];
+ $sql = "select * from  uplode";
+ $res = mysqli_query($conn,$sql);
+ 
+ 
+ 
+ if($res == true){
+    // $i= 1;
+ while( $row = mysqli_fetch_assoc($res)  ) 
+ {
+ 
+     //$i++;
+ 
+ ?>
+     <div class="d">
+ <img src="uplode/<?php  echo  $row['filename'] ;?>" alt="" width = "400px;">
+     </div>
+ 
+     <?php  } 
+     
+ }
 
 ?>
-    <div class="d">
-<img src="uplode/<?php  echo  $row['filename'] ;?>" alt="" width = "400px;">
-    </div>
 
-    <?php  } 
-    
-}?>
+
+
+
 </body>
 </html>
